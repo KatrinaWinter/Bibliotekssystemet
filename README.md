@@ -26,7 +26,7 @@ Boken ska ha:<br>
 [] Låna ut en bok.<br>
 [] Lämna tillbaka en bok.<br>
 [] Visa endast böcker som är tillgängliga.<br>
-[] Visa hur många böcker som finns registrerade.<br>
+[x] Visa hur många böcker som finns registrerade.<br>
 
 <h4>[] Main </h4>– innehåller programmets meny och tar emot användarens val.<br>
 

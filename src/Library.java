@@ -16,7 +16,17 @@ public class Library {
         return true;
     }
 
-    public int nrOfBooks() { return books.size();}
+    public void inventory() {
+        if (books.isEmpty()) {
+            System.out.println("Biblioteket är tomt. ");
+            return;
+        }
+        for (Book book : books ){
+            System.out.println(book.getTitel() +
+                    " Sktiven av: " + book.getAuthor() +
+                    "ID nr. " + book.getBookId());
+        }
+    }
 
     public Book findBook(String titel) {
         for (Book book : books) {
@@ -26,5 +36,7 @@ public class Library {
         }
         return null;
     }
+
+    public int nrOfBooks() { return books.size();}
 
 }
