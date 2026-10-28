@@ -7,7 +7,6 @@ Biblioteket behöver kunna registrera böcker, lista alla böcker, låna ut dem 
 
 Varje bok ska ha en titel, en författare och ett unikt bok-ID. 
 En bok ska inte kunna lånas ut om den redan är utlånad, och samma bok-ID får inte registreras två gånger.
-
 <h3> Krav: </h3>
 [] Book – representerar en bok. <br>
 Boken ska ha:<br>
