@@ -26,7 +26,7 @@ Hanterar bibliotekets böcker och funktioner.<br>
 [x] Visa alla registrerade böcker.<br>
 [x] Söka efter en bok med titel.<br>
 [x] Låna ut en bok.<br>
-[] Lämna tillbaka en bok.<br>
+[x] Lämna tillbaka en bok.<br>
 [] Visa endast böcker som är tillgängliga.<br>
 [x] Visa hur många böcker som finns registrerade.<br>
 

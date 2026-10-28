@@ -25,4 +25,14 @@ public class Book {
         return true;
     }
 
+    public boolean returnBook() {
+        if (available){
+            System.out.println("Boken är redan returnerad!");
+            return false;
+        }
+        available = true;
+        System.out.println("Tack för återlämningen!");
+        return true;
+    }
+
 }
