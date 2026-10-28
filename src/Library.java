@@ -12,7 +12,7 @@ public class Library {
             }
         }
         books.add(book);
-        System.out.println(book.getTitel() + "Tillagt!");
+        System.out.println(book.getTitel() + " Tillagt!");
         return true;
     }
 
@@ -23,8 +23,8 @@ public class Library {
         }
         for (Book book : books) {
             System.out.println(book.getTitel() +
-                    " Sktiven av: " + book.getAuthor() +
-                    "ID nr. " + book.getBookId());
+                    " Skriven av: " + book.getAuthor() +
+                    " ID nr. " + book.getBookId());
         }
     }
 
@@ -47,7 +47,7 @@ public class Library {
             if (book.getAvailable()) {
                 System.out.println(book.getTitel() +
                         " Sktiven av: " + book.getAuthor() +
-                        "ID nr. " + book.getBookId());
+                        " ID nr. " + book.getBookId());
                 foundAvailable = true;
             }
         }
