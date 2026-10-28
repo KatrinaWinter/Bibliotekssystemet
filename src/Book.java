@@ -13,6 +13,7 @@ public class Book {
     public String getTitel() { return titel; }
     public String getAuthor() { return author; }
     public int getBookId() { return bookId; }
+    public boolean getAvailable() {return available; }
 
     public boolean borrowBook() {
         if ( !available){

@@ -21,7 +21,7 @@ public class Library {
             System.out.println("Biblioteket är tomt. ");
             return;
         }
-        for (Book book : books ){
+        for (Book book : books) {
             System.out.println(book.getTitel() +
                     " Sktiven av: " + book.getAuthor() +
                     "ID nr. " + book.getBookId());
@@ -37,6 +37,23 @@ public class Library {
         return null;
     }
 
-    public int nrOfBooks() { return books.size();}
+    public int nrOfBooks() {
+        return books.size();
+    }
+
+    public void availableBooks() {
+        boolean foundAvailable = false;
+        for (Book book : books) {
+            if (book.getAvailable()) {
+                System.out.println(book.getTitel() +
+                        " Sktiven av: " + book.getAuthor() +
+                        "ID nr. " + book.getBookId());
+                foundAvailable = true;
+            }
+        }
+        if (!foundAvailable) {
+            System.out.println("Inga böcker tillgängliga.");
+        }
+    }
 
 }
