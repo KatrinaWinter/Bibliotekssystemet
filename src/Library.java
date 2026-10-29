@@ -7,7 +7,7 @@ public class Library {
     public boolean addNewBook(Book book) {
         for (Book existingBook : books) {
             if (existingBook.getBookId() == book.getBookId()) {
-                System.out.println("Ange ett annat bok-ID.");
+                System.out.println("Varning: Bok-ID finns redan!");
                 return false;
             }
         }

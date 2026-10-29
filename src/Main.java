@@ -22,7 +22,7 @@ public class Main {
             }
 
             if (choice == 1){
-                System.out.println("Bok Tittle: ");
+                System.out.println("Boktittle: ");
                 String titel = scanner.nextLine();
 
                 System.out.print("Författare: ");
@@ -44,6 +44,7 @@ public class Main {
 
                     if (bookId < 1000 || bookId > 9999) {
                         System.out.println("ID måste vara mellan 1000 och 9999.");
+                        continue;
                     }
 
                     Book book = new Book(titel, author, bookId);
@@ -51,7 +52,7 @@ public class Main {
                     if (library.addNewBook(book)) {
                         validId = true;
                     }else {
-                        System.out.println("Ange ett giltigt ID med fyra siffror.");
+                        System.out.println("Ange ett annat bok-ID.");
                     }
                 }
 
@@ -116,7 +117,7 @@ public class Main {
     public static void showMenu() {
         System.out.println("\n1. Registrera Ny Bok  | 2. Visa Alla Böcker      | 3. Sök Bok Titel ");
         System.out.println("4. Låna en Bok        | 5. Lämna Tillbaka en Bok | 6. Visa Tillgängliga Böcker ");
-        System.out.println("7. Visa Antal Böcker  | 8.                       | 9. ");
+        System.out.println("7. Visa Antal Böcker  |");
         System.out.println("0. Avsluta");
         System.out.print("\nVälj ett alternativ: ");
     }
