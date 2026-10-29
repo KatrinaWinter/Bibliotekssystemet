@@ -91,7 +91,7 @@ public class Main {
                 library.availableBooks();
 
             } else if (choice == 7) {
-                library.nrOfBooks();
+                System.out.println("Biblioteket har: " + library.nrOfBooks() + " Tillgängliga");
 
             } else if (choice == 0) {
                 System.out.println("Välkommen Åter!");

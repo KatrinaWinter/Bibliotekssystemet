@@ -16,7 +16,7 @@ Boken ska ha:<br>
 - Författare
 - Bok-ID
 
-<h4>[] Library </h4>
+<h4>[x] Library </h4>
 Hanterar bibliotekets böcker och funktioner.<br>
 - Kan ej lämnas ut om den är utlånad
 - Kan ej registrera samma bok-ID för olika böcker
@@ -30,15 +30,15 @@ Hanterar bibliotekets böcker och funktioner.<br>
 [x] Visa endast böcker som är tillgängliga.<br>
 [x] Visa hur många böcker som finns registrerade.<br>
 
-<h4>[] Main </h4>
+<h4>[x] Main </h4>
 Innehåller programmets meny och tar emot användarens val.<br>
 
 <h3> Menyn ska ha: </h3>
-[] Registrera en ny bok.<br>
-[] Visa alla registrerade böcker.<br>
-[] Söka efter en bok med titel.<br>
-[] Låna ut en bok.<br>
-[] Lämna tillbaka en bok.<br>
-[] Visa endast böcker som är tillgängliga.<br>
-[] Visa hur många böcker som finns registrerade.<br>
-[] Avsluta programmet via menyn.<br>
+[x] Registrera en ny bok.<br>
+[x] Visa alla registrerade böcker.<br>
+[x] Söka efter en bok med titel.<br>
+[x] Låna ut en bok.<br>
+[x] Lämna tillbaka en bok.<br>
+[x] Visa endast böcker som är tillgängliga.<br>
+[x] Visa hur många böcker som finns registrerade.<br>
+[x] Avsluta programmet via menyn.<br>
