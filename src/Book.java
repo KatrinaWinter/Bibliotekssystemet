@@ -2,7 +2,7 @@ public class Book {
     private final String titel;
     private final String author;
     private final int bookId;
-    private boolean available = false;
+    private boolean available = true;
 
     public Book(String titel, String author, int bookId) {
         this.titel = titel;
