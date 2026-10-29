@@ -28,9 +28,20 @@ public class Main {
                 System.out.print("Författare: ");
                 String author = scanner.nextLine();
 
-                System.out.print("Bok-ID: ");
-                int bookId = scanner.nextInt();
-                scanner.nextLine();
+                int bookId = 0;
+                boolean validId = false;
+
+                while (!validId) {
+                    System.out.print("Bok-ID: ");
+                    String inmatning = scanner.nextLine();
+
+                    try {
+                        bookId = Integer.parseInt(inmatning);
+                        validId = true;
+                    } catch (NumberFormatException e) {
+                        System.out.println("Ange ett giltigt ID med siffror.");
+                    }
+                }
 
                 Book book = new Book(titel, author, bookId);
                 library.addNewBook(book);
