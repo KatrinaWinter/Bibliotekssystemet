@@ -24,7 +24,7 @@ public class Library {
         for (Book book : books) {
             System.out.println(book.getTitel() +
                     " Skriven av: " + book.getAuthor() +
-                    " ID nr. " + book.getBookId());
+                    " Bok-ID: " + book.getBookId());
         }
     }
 
@@ -47,7 +47,7 @@ public class Library {
             if (book.getAvailable()) {
                 System.out.println(book.getTitel() +
                         " Sktiven av: " + book.getAuthor() +
-                        " ID nr. " + book.getBookId());
+                        " Bok-ID: " + book.getBookId());
                 foundAvailable = true;
             }
         }

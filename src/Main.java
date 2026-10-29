@@ -28,7 +28,7 @@ public class Main {
                 System.out.print("Författare: ");
                 String author = scanner.nextLine();
 
-                System.out.print("Bok ID: ");
+                System.out.print("Bok-ID: ");
                 int bookId = scanner.nextInt();
                 scanner.nextLine();
 
@@ -60,6 +60,17 @@ public class Main {
                 } else {
                     System.out.println(" Bok: " + titel + " Fins ej!");
                 }
+            } else if (choice == 5) {
+                System.out.println("Ange Bok Titel: ");
+                String titel = scanner.nextLine();
+
+                Book found = library.findBook(titel);
+
+                if (found != null){
+                    found.returnBook();
+                } else {
+                    System.out.println(" Bok: " + titel + " Tillhör ej vårat Bibliotek!");
+                }
             }
 
 
@@ -73,4 +84,10 @@ public class Main {
         System.out.println("0. Avsluta");
         System.out.print("\nVälj ett alternativ: ");
     }
+
+    /* To Kill a Mockingbird  Harper Lee       101
+    *  Harry Potter           J. K. Rowling    102
+    *  Pride and Prejudice    Jane Austen      103
+    *  1984                   George Orwell    104 */
+
 }
