@@ -34,8 +34,10 @@ public class Main {
 
                 Book book = new Book(titel, author, bookId);
                 library.addNewBook(book);
+
             } else if (choice == 2) {
                 library.inventory();
+
             } else if (choice == 3) {
                 System.out.println("Ange Bok Titel: ");
                 String titel = scanner.nextLine();
@@ -49,6 +51,7 @@ public class Main {
                 } else {
                     System.out.println("Boken hittades inte.");
                 }
+
             } else if (choice == 4) {
                 System.out.println("Ange Bok Titel: ");
                 String titel = scanner.nextLine();
@@ -60,6 +63,7 @@ public class Main {
                 } else {
                     System.out.println(" Bok: " + titel + " Fins ej!");
                 }
+
             } else if (choice == 5) {
                 System.out.println("Ange Bok Titel: ");
                 String titel = scanner.nextLine();
@@ -71,6 +75,18 @@ public class Main {
                 } else {
                     System.out.println(" Bok: " + titel + " Tillhör ej vårat Bibliotek!");
                 }
+
+            } else if (choice == 6) {
+                library.availableBooks();
+
+            } else if (choice == 7) {
+                library.nrOfBooks();
+
+            } else if (choice == 0) {
+                System.out.println("Välkommen Åter!");
+
+            } else {
+                System.out.println("Försök igen! Ange en siffra från menyn.");
             }
 
 
