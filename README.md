@@ -1,44 +1,77 @@
-## Bibliotekssystemet ##
+# Bibliotekssystemet
 
-Uppdraget
-Du ska skapa ett konsolprogram som hjälper ett litet bibliotek att hålla reda på sina böcker och utlåningar.
+## Om projektet
 
-Biblioteket behöver kunna registrera böcker, lista alla böcker, låna ut dem och registrera när de lämnas tillbaka.
+Bibliotekssystemet är ett Java-baserat konsolprogram som hjälper ett litet bibliotek att hålla reda på sina böcker och utlåningar.
 
-Varje bok ska ha en titel, en författare och ett unikt bok-ID. 
-En bok ska inte kunna lånas ut om den redan är utlånad, och samma bok-ID får inte registreras två gånger.
-<h2> Krav: </h2>
-<h4>[x] Book </h4> 
-Representerar en bok.
+Programmet låter användaren registrera böcker, söka efter titlar, låna ut böcker och registrera återlämningar. Det kontrollerar även att varje bok har ett unikt bok-ID och att en redan utlånad bok inte kan lånas ut igen.
 
-Boken ska ha:<br>
-- Tittel
-- Författare
-- Bok-ID
+## Funktioner
 
-<h4>[x] Library </h4>
-Hanterar bibliotekets böcker och funktioner.<br>
-- Kan ej lämnas ut om den är utlånad
-- Kan ej registrera samma bok-ID för olika böcker
+- [x] Registrera nya böcker med titel, författare och bok-ID.
+- [x] Kontrollera att bok-ID är ett heltal mellan 1000 och 9999.
+- [x] Förhindra att samma bok-ID registreras flera gånger.
+- [x] Visa alla registrerade böcker.
+- [x] Söka efter en bok med titel, oberoende av stora och små bokstäver.
+- [x] Låna ut en bok.
+- [x] Förhindra utlåning av en redan utlånad bok.
+- [x] Registrera återlämning av en bok.
+- [x] Förhindra att en redan återlämnad bok återlämnas igen.
+- [x] Visa endast tillgängliga böcker.
+- [x] Visa antalet registrerade böcker.
+- [x] Hantera felaktig inmatning i menyn och vid registrering av bok-ID.
+- [x] Avsluta programmet via menyn.
 
-<h3> Programmet ska kunna: </h3>
-[x] Registrera en ny bok.<br>
-[x] Visa alla registrerade böcker.<br>
-[x] Söka efter en bok med titel.<br>
-[x] Låna ut en bok.<br>
-[x] Lämna tillbaka en bok.<br>
-[x] Visa endast böcker som är tillgängliga.<br>
-[x] Visa hur många böcker som finns registrerade.<br>
+## Klassstruktur
 
-<h4>[x] Main </h4>
-Innehåller programmets meny och tar emot användarens val.<br>
+### `Book`
 
-<h3> Menyn ska ha: </h3>
-[x] Registrera en ny bok.<br>
-[x] Visa alla registrerade böcker.<br>
-[x] Söka efter en bok med titel.<br>
-[x] Låna ut en bok.<br>
-[x] Lämna tillbaka en bok.<br>
-[x] Visa endast böcker som är tillgängliga.<br>
-[x] Visa hur många böcker som finns registrerade.<br>
-[x] Avsluta programmet via menyn.<br>
+Representerar en bok och ansvarar för dess information och utlåningsstatus.
+
+Klassen innehåller:
+- Titel, författare och unikt bok-ID.
+- Information om boken är tillgänglig.
+- Metoder för att låna ut och återlämna en bok.
+- Getters för att läsa bokens information.
+
+### `Library`
+
+Hanterar bibliotekets samling av böcker.
+
+Klassen ansvarar för att:
+- Registrera böcker och kontrollera att bok-ID är unikt.
+- Visa alla böcker.
+- Söka efter böcker med titel.
+- Visa tillgängliga böcker.
+- Räkna antalet registrerade böcker.
+
+### `Main`
+
+Innehåller programmets meny och hanterar användarens val.
+
+Klassen ansvarar för att:
+- Ta emot och hantera användarens inmatning.
+- Anropa rätt metoder i `Library` och `Book`.
+- Hantera felaktiga menyval och bok-ID:n.
+- Fortsätta visa menyn tills användaren väljer att avsluta.
+
+## Testning
+
+Följande funktioner har testats manuellt:
+
+- Registrering av böcker med giltiga bok-ID:n.
+- Avvisning av bokstäver och ID:n utanför det tillåtna intervallet.
+- Avvisning av redan registrerade bok-ID:n.
+- Sökning med både stora och små bokstäver.
+- Utlåning och återlämning av böcker.
+- Avvisning av upprepad utlåning och återlämning.
+- Visning av tillgängliga böcker och totalt antal böcker.
+- Hantering av felaktiga menyval och avslut av programmet.
+
+## Teknik
+
+- Java
+- `ArrayList` och `List` för att lagra böcker.
+- `Scanner` för att läsa användarens inmatning.
+- Git och GitHub för versionshantering.
+
