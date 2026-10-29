@@ -37,27 +37,37 @@ public class Main {
             } else if (choice == 2) {
                 library.inventory();
             } else if (choice == 3) {
-                System.out.println("Ange Bok Tittel: ");
+                System.out.println("Ange Bok Titel: ");
                 String titel = scanner.nextLine();
 
                 Book found = library.findBook(titel);
 
                 if ( found != null) {
-                    System.out.println(found.getTitel() + "av " +
-                            found.getAuthor() + "Bok-ID: " +
+                    System.out.println(found.getTitel() + " Av: " +
+                            found.getAuthor() + " Bok-ID: " +
                             found.getBookId());
                 } else {
                     System.out.println("Boken hittades inte.");
                 }
-            }
+            } else if (choice == 4) {
+                System.out.println("Ange Bok Titel: ");
+                String titel = scanner.nextLine();
 
+                Book found = library.findBook(titel);
+
+                if (found != null){
+                    found.borrowBook();
+                } else {
+                    System.out.println(" Bok: " + titel + " Fins ej!");
+                }
+            }
 
 
         }
     }
 
     public static void showMenu() {
-        System.out.println("1. Registrera Ny Bok  | 2. Visa Alla Böcker      | 3. Sök Bok Titel ");
+        System.out.println("\n1. Registrera Ny Bok  | 2. Visa Alla Böcker      | 3. Sök Bok Titel ");
         System.out.println("4. Låna en Bok        | 5. Lämna Tillbaka en Bok | 6. Visa Tillgängliga Böcker ");
         System.out.println("7. Visa Antal Böcker  | 8.                       | 9. ");
         System.out.println("0. Avsluta");
