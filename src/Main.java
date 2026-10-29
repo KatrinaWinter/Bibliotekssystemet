@@ -34,8 +34,21 @@ public class Main {
 
                 Book book = new Book(titel, author, bookId);
                 library.addNewBook(book);
-            }else if (choice == 2) {
+            } else if (choice == 2) {
                 library.inventory();
+            } else if (choice == 3) {
+                System.out.println("Ange Bok Tittel: ");
+                String titel = scanner.nextLine();
+
+                Book found = library.findBook(titel);
+
+                if ( found != null) {
+                    System.out.println(found.getTitel() + "av " +
+                            found.getAuthor() + "Bok-ID: " +
+                            found.getBookId());
+                } else {
+                    System.out.println("Boken hittades inte.");
+                }
             }
 
 
