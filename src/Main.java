@@ -22,7 +22,7 @@ public class Main {
             }
 
             if (choice == 1){
-                System.out.println("Bok Tittel: ");
+                System.out.println("Bok Tittle: ");
                 String titel = scanner.nextLine();
 
                 System.out.print("Författare: ");
@@ -32,19 +32,28 @@ public class Main {
                 boolean validId = false;
 
                 while (!validId) {
-                    System.out.print("Bok-ID: ");
-                    String inmatning = scanner.nextLine();
+                    System.out.print("Bok-ID (1000–9999): ");
+                    String newBookId = scanner.nextLine();
 
                     try {
-                        bookId = Integer.parseInt(inmatning);
-                        validId = true;
+                        bookId = Integer.parseInt(newBookId);
                     } catch (NumberFormatException e) {
-                        System.out.println("Ange ett giltigt ID med siffror.");
+                        System.out.println("Ange ett giltigt ID med fyra siffror.");
+                        continue;
+                    }
+
+                    if (bookId < 1000 || bookId > 9999) {
+                        System.out.println("ID måste vara mellan 1000 och 9999.");
+                    }
+
+                    Book book = new Book(titel, author, bookId);
+
+                    if (library.addNewBook(book)) {
+                        validId = true;
+                    }else {
+                        System.out.println("Ange ett giltigt ID med fyra siffror.");
                     }
                 }
-
-                Book book = new Book(titel, author, bookId);
-                library.addNewBook(book);
 
             } else if (choice == 2) {
                 library.inventory();
@@ -91,7 +100,7 @@ public class Main {
                 library.availableBooks();
 
             } else if (choice == 7) {
-                System.out.println("Biblioteket har: " + library.nrOfBooks() + " Tillgängliga");
+                System.out.println("Antal registrerade böcker: " + library.nrOfBooks());
 
             } else if (choice == 0) {
                 System.out.println("Välkommen Åter!");
@@ -112,9 +121,9 @@ public class Main {
         System.out.print("\nVälj ett alternativ: ");
     }
 
-    /* To Kill a Mockingbird  Harper Lee       101
-    *  Harry Potter           J. K. Rowling    102
-    *  Pride and Prejudice    Jane Austen      103
-    *  1984                   George Orwell    104 */
+    /* To Kill a Mockingbird  Harper Lee       1001
+    *  Harry Potter           J. K. Rowling    1002
+    *  Pride and Prejudice    Jane Austen      1003
+    *  1984                   George Orwell    1004 */
 
 }

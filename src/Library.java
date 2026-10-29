@@ -7,7 +7,7 @@ public class Library {
     public boolean addNewBook(Book book) {
         for (Book existingBook : books) {
             if (existingBook.getBookId() == book.getBookId()) {
-                System.out.println("Varning: Bok-ID finns redan!");
+                System.out.println("Ange ett annat bok-ID.");
                 return false;
             }
         }
@@ -46,7 +46,7 @@ public class Library {
         for (Book book : books) {
             if (book.getAvailable()) {
                 System.out.println(book.getTitel() +
-                        " Sktiven av: " + book.getAuthor() +
+                        " Skriven av: " + book.getAuthor() +
                         " Bok-ID: " + book.getBookId());
                 foundAvailable = true;
             }
