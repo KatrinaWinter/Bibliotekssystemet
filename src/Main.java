@@ -21,7 +21,7 @@ public class Main {
                 continue;
             }
 
-            if (choice == 1){
+            if (choice == 1){ // Registrera Ny Bok
                 System.out.println("Boktittle: ");
                 String titel = scanner.nextLine();
 
@@ -56,14 +56,11 @@ public class Main {
                     }
                 }
 
-            } else if (choice == 2) {
+            } else if (choice == 2) { // Visa Alla Böcker
                 library.inventory();
 
-            } else if (choice == 3) {
-                System.out.println("Ange Bok Titel: ");
-                String titel = scanner.nextLine();
-
-                Book found = library.findBook(titel);
+            } else if (choice == 3) { // Sök Bok Titel
+                Book found = searchBook(scanner, library);
 
                 if ( found != null) {
                     System.out.println(found.getTitel() + " Av: " +
@@ -73,37 +70,36 @@ public class Main {
                     System.out.println("Boken hittades inte.");
                 }
 
-            } else if (choice == 4) {
-                System.out.println("Ange Bok Titel: ");
-                String titel = scanner.nextLine();
-
-                Book found = library.findBook(titel);
+            } else if (choice == 4) { // Låna en Bok
+                Book found = searchBook(scanner, library);
 
                 if (found != null){
                     found.borrowBook();
                 } else {
-                    System.out.println(" Bok: " + titel + " Fins ej!");
+                    System.out.println(" Bok: " +
+                            searchBook(scanner, library) +
+                            " Fins ej!");
                 }
 
-            } else if (choice == 5) {
-                System.out.println("Ange Bok Titel: ");
-                String titel = scanner.nextLine();
-
-                Book found = library.findBook(titel);
+            } else if (choice == 5) {  // Lämna Tillbaka en Bok
+                Book found = searchBook(scanner, library);
 
                 if (found != null){
                     found.returnBook();
                 } else {
-                    System.out.println(" Bok: " + titel + " Tillhör ej vårat Bibliotek!");
+                    System.out.println(" Bok: " +
+                            searchBook(scanner, library) +
+                            " Tillhör ej vårat Bibliotek!");
                 }
 
-            } else if (choice == 6) {
+            } else if (choice == 6) { // Visa Tillgängliga Böcker
                 library.availableBooks();
 
-            } else if (choice == 7) {
-                System.out.println("Antal registrerade böcker: " + library.nrOfBooks());
+            } else if (choice == 7) { // Visa Antal Böcker
+                System.out.println("Antal registrerade böcker: " +
+                        library.nrOfBooks());
 
-            } else if (choice == 0) {
+            } else if (choice == 0) { // Avsluta
                 System.out.println("Välkommen Åter!");
 
             } else {
@@ -116,10 +112,19 @@ public class Main {
 
     public static void showMenu() {
         System.out.println("\n1. Registrera Ny Bok  | 2. Visa Alla Böcker      | 3. Sök Bok Titel ");
-        System.out.println("4. Låna en Bok        | 5. Lämna Tillbaka en Bok | 6. Visa Tillgängliga Böcker ");
-        System.out.println("7. Visa Antal Böcker  |");
-        System.out.println("0. Avsluta");
+        System.out.println("  4. Låna en Bok        | 5. Lämna Tillbaka en Bok | 6. Visa Tillgängliga Böcker ");
+        System.out.println("  7. Visa Antal Böcker  |");
+        System.out.println("  0. Avsluta");
         System.out.print("\nVälj ett alternativ: ");
+    }
+
+    public static Book searchBook(Scanner scanner, Library library) {
+        System.out.println("Ange Bok Titel: ");
+        String titel = scanner.nextLine();
+
+        return library.findBook(titel);
+    }
+
     }
 
     /* To Kill a Mockingbird  Harper Lee       1001
@@ -127,4 +132,4 @@ public class Main {
     *  Pride and Prejudice    Jane Austen      1003
     *  1984                   George Orwell    1004 */
 
-}
+
